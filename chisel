@@ -1,0 +1,9 @@
+---
+tags: [ tunneling ]
+---
+# Simple Reverse Connection
+# Details: Forward traffic from server's <forwarded_port> to client's localhost <forwarded_port>.
+# - server
+./chisel server --reverse -p <port>
+# - client
+./chisel client <ip>:<port> R:<forwarded_port>:127.0.0.1:<forwarded_port>
