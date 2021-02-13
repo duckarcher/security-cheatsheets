@@ -1,0 +1,24 @@
+---
+tags: [ smb ]
+---
+# To display public shares on the server:
+smbclient -L <ip>
+smbclient -L <ip> -U ''
+smbclient -L <ip> -U 'dasdad'
+smbclient -L <ip> -U 'anonymous'
+smbclient -L //<ip>
+
+# To connect to a share:
+smbclient //<ip>/<share>
+
+# Mount a share
+# (check `mount` cheatsheet for more)
+mount -t cifs //<ip>/<share> /mnt/<share>
+# (if error = bad option, need helper)
+apt install cifs-utils
+
+#Download file from share
+smbclient //<ip>/<share>
+recurse ON
+prompt OFF
+mget *

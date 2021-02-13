@@ -1,0 +1,13 @@
+---
+tags: [ smb ]
+---
+# Enumerate shares (tries to write on shares to check for write priv)
+smbmap -H <ip>
+smbmap -H <ip> -u 'dsdad'
+smbmap -H <ip> -u anonymous
+
+# List files inside share
+smbmap -R <directory> -H <host>
+
+# Download file
+smbmap -H <host> -A <file> -q
