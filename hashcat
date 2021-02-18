@@ -1,0 +1,21 @@
+---
+tags: [ password_cracking ]
+---
+# Identify mode
+hashcat --example-hashes | grep '<identifier>' -B2
+
+# Crack a password
+hashcat -m <mode> <hash_file> <wordlist>
+
+# Specify "user:hash" format (flag)
+--user
+
+# Specify a rule (flag)
+-r <rule>
+# example: /usr/share/hashcat/rules/best64.rule
+
+# Apply rule for wordlist and save to file
+hashcat <old> -r <rule> --stdout > <new>
+
+# Run hashcat without driver support (flag)
+--force

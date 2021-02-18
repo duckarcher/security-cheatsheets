@@ -1,0 +1,13 @@
+# Python
+python -c 'import pty;pty.spawn("/bin/bash");'
+(Ctrl+Z)
+stty raw -echo
+fg (back to netcat)
+# for cleaning screen functionality
+export TERM=xterm
+
+# psuedo terminal
+script -q /dev/null
+
+# support arrows keys on netcat
+rlwrap <nc command>

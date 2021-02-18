@@ -1,17 +1,27 @@
+---
+tags: [ enumeration, scanning ]
+---
 # HTB scan
 # sV: enumerate versions
 # sC: safe script
 # oA: output all formats
-nmap -sV -sC -oA nmap 0.0.0.0
+nmap -sV -sC -oA <file> <ip>
+
+# All TCP ports
+nmap -p- -oA <file> <ip>
+
+# All UDP ports
+nmap -sU -oA <file> <ip>
+
+# Be quick and agressive (flags)
+--max-retries=(1|0)
+-T5
+
+# Host OS Detection
+nmap -A
 
 # Nmap verbose scan, runs syn stealth, T4 timing (should be ok on LAN), OS and service version info, traceroute and scripts against services
 nmap -v -sS -A -T4 target
-
-# As above but scans all TCP ports (takes a lot longer)
-nmap -v -sS -p- -A -T4 target
-
-# As above but scans all TCP ports and UDP scan (takes even longer)
-nmap -v -sU -sS -p- -A -T4 target
 
 # Search nmap scripts for keywords
 ls /usr/share/nmap/scripts/* | grep ftp
@@ -19,3 +29,7 @@ ls /usr/share/nmap/scripts/* | grep ftp
 # Nmap script to scan for vulnerable SMB servers - WARNING: unsafe=1 may cause knockover
 nmap -v -p 445 --script=smb-check-vulns --script-args=unsafe=1 target
 
+# Bypass firewall/ids/ips
+nmap --disable-arp-ping -Pn -n --source-port 53 <ip>
+# Use source ip (flags)
+-S <source_ip> -e <interface>
