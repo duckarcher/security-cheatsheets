@@ -1,0 +1,14 @@
+---
+tags: [ enumeration, rpc ]
+---
+# Connect as anonymous
+rpcclient -U '' <ip>
+
+# Enumerate users (connected)
+enumdomusers
+
+# Get users info
+querydispinfo
+
+# Get user info (last login, etc)
+queryuser <rid>

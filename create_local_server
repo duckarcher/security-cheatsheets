@@ -1,3 +1,6 @@
+---
+tags: [ http, smb ]
+---
 # Run a basic http server, great for serving up shells etc
 python -m SimpleHTTPServer 8000
 
@@ -9,3 +12,6 @@ ruby -rwebrick -e "WEBrick::HTTPServer.new(:Port => 80, :DocumentRoot => Dir.pwd
 
 # Run a basic PHP http server
 php -S 0.0.0.0:80
+
+# Run smb server (smb2 support)
+impacket-smbserver -smb2support <share_name> $(pwd)

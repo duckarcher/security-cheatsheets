@@ -1,0 +1,8 @@
+---
+tags: [ enumeration, ldap ]
+---
+# Get Domain
+ldapsearch -x -h <ip> -s base namingcontexts
+
+# Dump ldap info
+ldapsearch -x -h <ip> -s sub -b 'DC=?,DC=?'

@@ -1,0 +1,7 @@
+---
+tags: [ smb ]
+---
+# Mount share (anonymous)
+mount -t cifs //<ip>/<share> /mnt/<share>
+# Mount share (authed)
+mount -t cifs -o 'user=<user>,password=<password>' //<ip>/<share> /mnt/<share>

