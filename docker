@@ -1,0 +1,37 @@
+# Build
+docker build -t <name> .
+
+# Run
+docker run -d <name>
+docker run -p 1337:1337 --restart=on-failure --name=gunship -d <name>
+docker run -it <domain>/<image> bash
+
+# Attach
+docker exec -it <name> /bin/bash
+
+# Copy
+# To docker
+docker cp foo.txt <id>:/foo.txt
+# From docker
+docker cp <id>:/foo.txt foo.txt
+
+# Checking docker instances/images/containers
+docker ps
+docker images
+docker containers
+
+# List all instances
+docker ps -a
+
+# Kill
+docker kill <name>
+# Restart
+docker restart <name>
+
+# Remove Instances
+docker rm <name>
+# Remove Images
+docker rmi <name>
+
+# Login (cert should be inside: /etc/docker/certs.d/<domain>/ca.crt)
+docker login <domain>
